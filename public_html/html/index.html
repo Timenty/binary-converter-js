@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+	<meta name="theme-color" content="#a7c180"/>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1.0, shrink-to-fit=no"/>
+		<title>snake</title>
+		<link rel="stylesheet" href="../css/style.css"/>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<meta name="msapplication-TileColor" content="#000000"/>
+		<meta name="theme-color" content="#000000"/>
+	</head>
+	<body>
+		<main class="page-content">
+			<div class="menu">
+				<div class="container">
+					<div class="menu__list">
+						<div class="menu__list--item menu__list-name">
+							<h2>Snake</h2>
+						</div>
+						<div class="menu__list--item menu__list--item--main active" data-menu="0"><span class="menu__list--borders menu__list--play" id="playbtn" style="text-transform:uppercase" onclick="playBtn()">Play</span><span class="menu__list--borders" style="text-transform:uppercase" onclick="otherList(1)">settings</span></div>
+						<div class="menu__list--item menu__list--item--main" data-menu="1"><span class="menu__list-button" style="text-transform:uppercase" onclick="otherList(0)"><</span><span class="menu__list--borders menu__list--borders--offhover" style="text-transform:uppercase"></span>
+							<div class="menu__list-wrapper"><span class="menu__list-button menu__list-button--orange" id="greatWall" style="text-transform:uppercase" onclick="vallToggle()"><span>wall</span><span class="hid on"> off</span><span class="hid on2"> on</span></span>
+								<div class="menu__list-speed">
+									<label>Game Speed</label>
+									<input id="gameSpeed" type="range" min="15" list="tickmark" default="80" value="80" onchange="gameSpeed = this.value"/>
+									<datalist id="tickmark">
+										<option value="15" label="Insane"></option>
+										<option value="28" label="Gepard"></option>
+										<option value="50" label="Rabbit"></option>
+										<option value="80" label="Default"></option>
+										<option value="120" label="Turtle"></option>
+									</datalist>
+								</div>
+							</div>
+						</div>
+						<div class="menu__list--item menu__list--bottom menu__list-developer"><small style="color:#556b2f">author: Timenty</small></div>
+					</div>
+				</div>
+			</div>
+			<div class="game-over-notify">
+				<div class="game-over-notify__window">
+					<div class="game-over-notify--item"><span>Your Score:<span class="game-over-notify--score">1000</span></span></div><span class="game-over-notify--container"><span class="game-over-notify-p10 game-over-notify--menue game-over-notify--hover" onclick="toMenue()">menue</span><span class="game-over-notify-p10 game-over-notify--retry game-over-notify--hover" onclick="rest()">restart</span></span>
+				</div>
+			</div>
+			<canvas id="Canvas" width="500" height="500"></canvas>
+		</main>
+		<script src="../js/all.min.js"></script>
+	</body>
+</html>

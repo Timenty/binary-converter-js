@@ -1,0 +1,244 @@
+@import '_config'
+
+html,body
+	max-width 100%
+	min-height 100%
+	font-family sans-serif
+	background-color #fffff6
+#Canvas
+	background-color #fbfffdb5
+	// background-color: #eee
+	border #4caf50 2px solid
+	box-shadow 6px 6px 14px 6px #4caf50c7
+.game-over-notify
+	position: absolute;
+	visibility hidden
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	font-family: sans-serif;
+	font-size: 40px;
+	opacity 0
+	user-select none
+	transition .4s
+	&-p10
+		padding 0 10px
+		display: block
+		transition .25s
+		@media (max-width: 600px)
+			font-size: 26px
+	&__window
+		display flex
+		align-items center
+		justify-content center
+		flex-direction column
+		height 100%
+	&.active
+		opacity 1
+		visibility visible
+	&--menue
+		cursor: pointer
+		user-select none
+		color #009688
+	&--hover
+		&:hover
+			transform scale(1.1)
+	&--retry
+		position relative
+		padding-right 55px
+		user-select none
+		cursor: pointer
+		color #009688
+		@media (max-width: 600px)
+			padding-right 30px
+		&:after
+			top -6px
+			right 0	
+			content '↻'
+			font-size 50px
+			position absolute
+			animation: 1.3s linear 0s normal none infinite running rot;
+			@media (max-width: 600px)
+				font-size 30px
+				top -1px
+	&--container
+		margin-top 25px
+		display flex
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+main
+	height 100vh
+	position relative
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='86' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
+	background-color #ddffaa
+	overflow hidden
+.menu
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='86' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
+	background-color #ddffaa
+	// background-color #fffff6
+	position absolute
+	top 0
+	left 0
+	height 100%
+	width 100%
+	opacity 1
+	transition .3s
+	overflow hidden
+	&__list
+		transition-delay .5s
+		border-radius 10px
+		padding 10px 5px
+		// background-color #bdc192
+		// background-color #bdc192
+		background-color #bdc1929c
+		min-height 70vh
+		margin-top 10vh
+		padding-bottom 50px
+		position relative
+		// box-shadow 1px 2px 4px 2px #656755bf
+		transition .3s
+		@media (max-width: 900px)
+			box-shadow none
+			height calc(100vh - 60px)
+			border-radius 0
+			margin-top 0
+			display flex
+			flex-direction column
+			justify-content center
+			overflow hidden
+		// &:hover
+			// box-shadow 1px 2px 4px 1px #656755bf
+		&-speed
+			background-color #fbfffdb5
+			border-radius: 50px
+			padding 5px 15px
+			background: rgb(253,76,45);
+			background: linear-gradient(101deg, rgba(253,76,45,0.9192051820728291) 1%, rgba(67,195,34,0.5550595238095238) 100%);
+			label
+				border-radius: 14px;
+				padding: 1px 13px;
+				text-align: center;
+				margin-bottom: 4px;
+				color: #607d8b;
+				margin-top: -5px;
+				background-color: #f2fbf5;
+				display inherit
+		&-wrapper
+			display flex
+			flex-direction row
+			align-items center
+			justify-content space-between
+		&--item
+			padding 5px
+			background-color #e9f9fbcc
+			// background-color #f0f4c3
+			margin 10px 20px
+			border-radius 20px
+			color #607d8b
+			&--main
+				padding 10px
+				min-height 150px
+				margin-top 35px
+				padding-top 15px
+				display: none
+				visibility: hidden
+				opacity 0
+				transition .2s
+				&.active
+					display: block
+					transition .2s
+					opacity 1
+					visibility: visible
+		&--bottom
+			position absolute
+			bottom 0
+			right 0
+		&-button
+			display inline-block
+			padding 6px 10px
+			margin-bottom 10px
+			position relative
+			background-color #fbfffdb5
+			border-radius 20px
+			text-align center
+			transition .2s
+			cursor pointer
+			font-weight: bold
+			user-select: none
+			.hid
+				display: none
+			&:hover
+				background-color #bfcac4b5
+			&--green
+				background-color: #1bf186;
+				color: black;
+				box-shadow: 0 0 4px #3c7d48;
+				.on
+					display inline
+				&:hover
+					background-color: #15ce72;
+				&:active
+					box-shadow: 0 0 1px #3c7d48
+			&--orange
+				box-shadow: 0 0 4px #b57023
+				background-color: #ff9800
+				color #000000
+				.on2
+					display inline
+				&:hover
+					background-color: #de8400
+				&:active
+					box-shadow: 0 0 2px #b57023
+		&--borders
+			display block
+			padding 6px 10px
+			margin-bottom 10px
+			position relative
+			background-color #fbfffdb5
+			border-radius 20px
+			text-align center
+			transition .2s
+			cursor pointer
+			user-select: none
+			&:hover
+				background-color #bfcac4b5
+			&--offhover
+				cursor none
+				&:hover
+					background-color #fbfffdb5
+		&-developer
+			padding 10px
+		&-name
+			user-select: none
+			text-align center
+			@media (max-width: 900px)
+				position absolute
+				top 0
+				width 100%
+				left 0
+				border-radius unset!important
+				margin 0!important
+	&.fade
+		opacity 0
+		transition .2s
+		visibility hidden
+.container
+	width 500px
+	margin 0 auto
+	@media (max-width: 900px)
+		width 100%
+.page
+	&-content
+		display flex
+		align-items center
+.d
+	&-none
+		display: none

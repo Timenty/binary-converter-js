@@ -1,0 +1,35 @@
+{
+  "name": "newbase",
+  "version": "1.0.0",
+  "description": "Timenty's packages",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "run start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.4dclick.com:4D/symbat-academy.git"
+  },
+  "author": "Yalimov Timur",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug-beautify": "0.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "gulpfile.js": "^2.3.0"
+  },
+  "devDependencies": {
+    "gulp-cssmin": "^0.2.0"
+  }
+}

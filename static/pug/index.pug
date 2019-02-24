@@ -1,0 +1,40 @@
+extends _layout.pug
+
+block content
+	.menu
+		.container
+			.menu__list
+				.menu__list--item.menu__list-name
+					h2 Snake
+				.menu__list--item.menu__list--item--main.active(data-menu="0")
+					span.menu__list--borders.menu__list--play#playbtn(style="text-transform:uppercase" onclick="playBtn()") Play
+					span.menu__list--borders(style="text-transform:uppercase" onclick="otherList(1)") settings
+					//- span.menu__list--borders(style="text-transform:uppercase") highscore list
+				.menu__list--item.menu__list--item--main(data-menu="1")
+					span.menu__list-button(style="text-transform:uppercase" onclick="otherList(0)") <
+					span.menu__list--borders.menu__list--borders--offhover(style="text-transform:uppercase")
+					.menu__list-wrapper
+						span#greatWall.menu__list-button.menu__list-button--orange(style="text-transform:uppercase" onclick="vallToggle()")
+							span wall
+							span.hid.on  off
+							span.hid.on2  on
+						.menu__list-speed
+							label Game Speed
+							input#gameSpeed(type="range" min="15" list="tickmark" default="80" value="80" onchange="gameSpeed = this.value")
+							datalist(id="tickmark")
+								option(value="15" label="Insane")
+								option(value="28" label="Gepard")
+								option(value="50" label="Rabbit")
+								option(value="80" label="Default")
+								option(value="120" label="Turtle")
+				.menu__list--item.menu__list--bottom.menu__list-developer
+					small(style="color:#556b2f") author: Timenty
+	.game-over-notify
+		.game-over-notify__window
+			.game-over-notify--item
+				span Your Score:
+					span.game-over-notify--score 1000
+			span.game-over-notify--container
+				span.game-over-notify-p10.game-over-notify--menue.game-over-notify--hover(onclick="toMenue()") menue
+				span.game-over-notify-p10.game-over-notify--retry.game-over-notify--hover(onclick="rest()") restart
+	canvas#Canvas(width="500" height="500")
