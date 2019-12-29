@@ -10,6 +10,8 @@
 	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/build/bundle.css'>
 	<script defer src='https://timenty.github.io/binary-converter-js/build/bundle.js'></script>
 	<script type="application/javascript">
+
+
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('sw.js', { scope: './' }).then((registration) => {
 			    const data = {
@@ -19,7 +21,14 @@
 				    ...performance.getEntriesByType('resource').map((e) => e.name)
 				]
 			    };
-			    registration.installing.postMessage(data);
+				navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+				  return serviceWorkerRegistration.pushManager.getSubscription();
+				}).then(function(subscription) {
+				  if (!subscription) {
+				  }
+				  navigator.serviceWorker.controller.postMessage(data);
+				})
+			    
 			}).catch((err) => console.log('SW REGISTRATION FAIL', err));
 		}
 	</script>
