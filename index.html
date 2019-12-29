@@ -16,7 +16,7 @@
 			type: 'CACHE_URLS',
 			payload: [
 			    location.href,
-			    ...perfomance.getEntriesByType('resource').map((e) => e.name)
+			    ...performance.getEntriesByType('resource').map((e) => e.name)
 			]
 		    };
 		    registration.installing.postMessage(data);
