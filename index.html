@@ -10,18 +10,18 @@
 	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/build/bundle.css'>
 	<script defer src='https://timenty.github.io/binary-converter-js/build/bundle.js'></script>
 	<script type="application/javascript">
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('sw.js', { scope: './' }).then((registration) => {
-		    const data = {
-			type: 'CACHE_URLS',
-			payload: [
-			    location.href,
-			    ...performance.getEntriesByType('resource').map((e) => e.name)
-			]
-		    };
-		    registration.installing.postMessage(data);
-		}).catch((err) => console.log('SW REGISTRATION FAIL', err));
-	}
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('sw.js', { scope: './' }).then((registration) => {
+	    const data = {
+		type: 'CACHE_URLS',
+		payload: [
+		    location.href,
+		    ...performance.getEntriesByType('resource').map((e) => e.name)
+		]
+	    };
+	    registration.installing.postMessage(data);
+	}).catch((err) => console.log('SW REGISTRATION FAIL', err));
+}
 	</script>
 </head>
 <body>
