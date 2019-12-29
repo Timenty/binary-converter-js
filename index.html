@@ -6,6 +6,9 @@
 	<meta name="theme-color" content="#19191b">
 	<title>Binary converter</title>
 	<link rel='icon' type='image/png' href='https://timenty.github.io/binary-converter-js/favicon.png'>
+	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/global.css'>
+	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/build/bundle.css'>
+	<script defer src='https://timenty.github.io/binary-converter-js/build/bundle.js'></script>
 	<script type="application/javascript">
 		if ('serviceWorker' in navigator) {
    			navigator.serviceWorker.regiter('/sw.js', { scope: '/' })
@@ -20,10 +23,8 @@
             			registration.installing.postMessage(data);
         		}).catch((err) => console.log('SW registration FAIL:', err));}
 	</script>
-	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/global.css'>
-	<link rel='stylesheet' href='https://timenty.github.io/binary-converter-js/build/bundle.css'>
-	<script defer src='https://timenty.github.io/binary-converter-js/build/bundle.js'></script>
 </head>
 <body>
+
 </body>
 </html>
